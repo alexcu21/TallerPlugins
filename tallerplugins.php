@@ -39,13 +39,12 @@ function taller_activate() {
 /**
  * register deactivation hook
  */
+
 register_deactivation_hook( __FILE__, 'taller_plugin_deactivate' );
 
 /**
  * funcion desactivacion
  */
-
-
 
   function taller_plugin_deactivate() {
     // tu codigo aqui
