@@ -1,12 +1,37 @@
 <?php
-/*
-Plugin Name: Taller de plugins
-Plugin URI: URI de tu complemento
-Description: Plugin que consume la informacion de la api de openweather
-Version: 1.0.0
-Author: Alex Cuadra
-Author URI: Tu Sitio Web
-License: GPL-2.0+
-License URI: http://www.gnu.org/licenses/gpl-2.0.txt
-Text Domain: dominio-de-texto-de-tu-complemento
-*/
+
+/**
+ * Plugin Name:       My Plugin
+ * Plugin URI:        https://alexcuadra.dev
+ * Description:       A short description of the plugin.
+ * Version:           1.0.0
+ * Requires at least: 5.3
+ * Requires PHP:      5.6
+ * Author:            Alex Cuadra
+ * Author URI:        https://example.com
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       tallerplugins
+ */
+
+ // Register the activation hook.
+register_activation_hook( __FILE__, 'taller_activate' );
+
+/**
+ * funcion de activacion.
+ *
+ */
+function taller_activate() {
+    // Add a role.
+    add_role( 'taller_admin', 'Taller Admin', array(
+        'read' => true,
+        'level_10' => true,
+        'edit_posts' => true,
+        'delete_posts' => true,
+        'publish_posts' => true,
+        'upload_files' => true,
+        'edit_others_posts' => true,
+        'delete_others_posts' => true,
+        'manage_options' => true,
+    ) );
+}
