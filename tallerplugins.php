@@ -35,3 +35,19 @@ function taller_activate() {
         'manage_options' => true,
     ) );
 }
+
+/**
+ * register deactivation hook
+ */
+register_deactivation_hook( __FILE__, 'taller_plugin_deactivate' );
+
+/**
+ * funcion desactivacion
+ */
+
+
+
+  function taller_plugin_deactivate() {
+    // tu codigo aqui
+    remove_role( 'taller_admin' );
+  }
