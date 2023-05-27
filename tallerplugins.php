@@ -14,6 +14,9 @@
  * Text Domain:       tallerplugins
  */
 
+ // agregando metodo de desinstalacion
+ //require_once 'uninstall.php';
+
  // Register the activation hook.
 register_activation_hook( __FILE__, 'taller_activate' );
 
@@ -48,5 +51,15 @@ register_deactivation_hook( __FILE__, 'taller_plugin_deactivate' );
 
   function taller_plugin_deactivate() {
     // tu codigo aqui
-    remove_role( 'taller_admin' );
+    
   }
+
+  /**
+   * Metodo Unistall
+   */
+
+   register_uninstall_hook( __FILE__, 'taller_uninstall' );
+ 
+    function taller_uninstall() {
+        remove_role( 'taller_admin' );
+    }
