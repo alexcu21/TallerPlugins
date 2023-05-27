@@ -63,3 +63,8 @@ register_deactivation_hook( __FILE__, 'taller_plugin_deactivate' );
     function taller_uninstall() {
         remove_role( 'taller_admin' );
     }
+
+
+require_once 'includes/menus.php';
+
+
