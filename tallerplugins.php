@@ -67,4 +67,6 @@ register_deactivation_hook( __FILE__, 'taller_plugin_deactivate' );
 
 require_once 'includes/menus.php';
 
+require_once 'includes/settings.php';
 
+echo var_dump(get_option( 'taller_api_token', '' ));
