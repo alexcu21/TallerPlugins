@@ -14,6 +14,10 @@
  * Text Domain:       tallerplugins
  */
 
+ if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
  // agregando metodo de desinstalacion
  //require_once 'uninstall.php';
 
@@ -146,3 +150,5 @@ echo var_dump(get_option( 'taller_api_token', '' ));
 }
 
 add_shortcode('weather','taller_weather_shortcode' );
+
+wp_enqueue_style( 'styles-taller', plugins_url( 'css/styles.css', __FILE__ ) );
